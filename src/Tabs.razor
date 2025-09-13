@@ -1,0 +1,39 @@
+@using Soenneker.Quark.Enums.Colors
+@using Soenneker.Quark.Divs
+@inherits Soenneker.Quark.Components.Element
+
+<Div Class="nav" @attributes="BuildAttributes()">
+    @ChildContent
+</Div>
+
+@code {
+    [Parameter]
+    public Color Color { get; set; } = Color.Primary;
+
+    [Parameter]
+    public bool Pills { get; set; }
+
+    [Parameter]
+    public bool Vertical { get; set; }
+
+    [Parameter]
+    public bool Justified { get; set; }
+
+    protected override Dictionary<string, object> BuildAttributes()
+    {
+        Dictionary<string, object> attributes = base.BuildAttributes();
+
+        var baseClasses = "nav nav-tabs";
+        if (Pills)
+            baseClasses = "nav nav-pills";
+        if (Vertical)
+            baseClasses = $"{baseClasses} flex-column";
+        if (Justified)
+            baseClasses = $"{baseClasses} nav-justified";
+
+        attributes["class"] = AppendToClass(attributes.GetValueOrDefault("class")
+            ?.ToString(), baseClasses);
+
+        return attributes;
+    }
+}
