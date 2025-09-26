@@ -1,6 +1,4 @@
-@using Soenneker.Quark.ListItems
-@using Soenneker.Quark.Buttons
-@using Soenneker.Quark.Enums.ButtonTypes
+@using Soenneker.Quark.Enums
 
 @inherits Soenneker.Quark.Element
 
@@ -14,6 +12,7 @@
 </ListItem>
 
 @code {
+	public override string? Name { get; set; } = "Tab";
 
 	[Parameter]
 	public string? Target { get; set; }
