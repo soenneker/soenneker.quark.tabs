@@ -3,34 +3,648 @@
 
 @inject ILogger<Index> Logger
 
-<img src="https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png" />
-<h1>Soenneker.Quark.Tabs demo</h1>
-<p>Minimal usage examples.</p>
-<br />
+<div class="container py-4">
+    <div class="row">
+        <div class="col-12">
+            <img src="https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png" class="mb-3" />
+            <h1>Soenneker.Quark.Tabs Demo</h1>
+            <p class="lead">Comprehensive examples showcasing the Tabs component functionality and variations.</p>
+        </div>
+    </div>
 
-<hr />
+    <!-- Basic Tabs -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <h2>Basic Tabs</h2>
+            <p>Standard horizontal tabs with default styling.</p>
+            
+            <TabsContainer>
+                <Tab Target="basic-home" Active="true">Home</Tab>
+                <Tab Target="basic-profile">Profile</Tab>
+                <Tab Target="basic-contact">Contact</Tab>
+            </TabsContainer>
+            
+            <div class="tab-content p-3 border border-top-0" id="basicTabsContent">
+                <div class="tab-pane fade show active" id="basic-home" role="tabpanel">
+                    <h4>Welcome Home!</h4>
+                    <p>This is the home tab content. Here you can see how the basic tabs work with the Quark Tabs component.</p>
+                    <div class="alert alert-info">
+                        <strong>Tip:</strong> Click on different tabs to see the content change.
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="basic-profile" role="tabpanel">
+                    <h4>User Profile</h4>
+                    <p>This is the profile tab content. You can put any content here including forms, images, or other components.</p>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Profile Information</h5>
+                            <p class="card-text">Sample profile data would go here.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="basic-contact" role="tabpanel">
+                    <h4>Contact Information</h4>
+                    <p>This is the contact tab content. Perfect for contact forms or contact details.</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">Email: contact@example.com</li>
+                        <li class="list-group-item">Phone: (555) 123-4567</li>
+                        <li class="list-group-item">Address: 123 Main St, City, State</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="container py-3">
-    <ul class="nav nav-tabs" id="demoTabs" role="tablist">
-        <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
-        </li>
-    </ul>
-    <div class="tab-content p-3 border border-top-0" id="demoTabsContent">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Home content</div>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Profile content</div>
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Contact content</div>
+    <!-- Pills Tabs -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <h2>Pills Tabs</h2>
+            <p>Tabs with pill-style appearance for a more modern look.</p>
+            
+            <TabsContainer Pills="true">
+                <Tab Target="pills-dashboard" Active="true">Dashboard</Tab>
+                <Tab Target="pills-analytics">Analytics</Tab>
+                <Tab Target="pills-settings">Settings</Tab>
+                <Tab Target="pills-reports">Reports</Tab>
+            </TabsContainer>
+            
+            <div class="tab-content p-3" id="pillsTabsContent">
+                <div class="tab-pane fade show active" id="pills-dashboard" role="tabpanel">
+                    <h4>Dashboard Overview</h4>
+                    <p>Your main dashboard with key metrics and information.</p>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">1,234</h5>
+                                    <p class="card-text">Total Users</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">5,678</h5>
+                                    <p class="card-text">Page Views</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">89%</h5>
+                                    <p class="card-text">Uptime</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">$12,345</h5>
+                                    <p class="card-text">Revenue</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-analytics" role="tabpanel">
+                    <h4>Analytics</h4>
+                    <p>Detailed analytics and performance metrics.</p>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: 75%">75%</div>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 60%">60%</div>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 45%">45%</div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-settings" role="tabpanel">
+                    <h4>Settings</h4>
+                    <p>Configure your application settings and preferences.</p>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="notifications" checked>
+                        <label class="form-check-label" for="notifications">Enable Notifications</label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="darkmode">
+                        <label class="form-check-label" for="darkmode">Dark Mode</label>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-reports" role="tabpanel">
+                    <h4>Reports</h4>
+                    <p>Generate and view various reports.</p>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action">Monthly Sales Report</a>
+                        <a href="#" class="list-group-item list-group-item-action">User Activity Report</a>
+                        <a href="#" class="list-group-item list-group-item-action">Performance Report</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vertical Tabs -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <h2>Vertical Tabs</h2>
+            <p>Tabs arranged vertically for better use of horizontal space.</p>
+            
+            <div class="row">
+                <div class="col-3">
+                    <TabsContainer Vertical="true">
+                        <Tab Target="vertical-overview" Active="true">Overview</Tab>
+                        <Tab Target="vertical-features">Features</Tab>
+                        <Tab Target="vertical-pricing">Pricing</Tab>
+                        <Tab Target="vertical-support">Support</Tab>
+                    </TabsContainer>
+                </div>
+                <div class="col-9">
+                    <div class="tab-content p-3 border" id="verticalTabsContent">
+                        <div class="tab-pane fade show active" id="vertical-overview" role="tabpanel">
+                            <h4>Product Overview</h4>
+                            <p>Get a comprehensive overview of our product features and capabilities.</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>Key Features</h5>
+                                    <ul>
+                                        <li>Easy to use interface</li>
+                                        <li>Responsive design</li>
+                                        <li>Cross-platform compatibility</li>
+                                        <li>24/7 support</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>Benefits</h5>
+                                    <ul>
+                                        <li>Increased productivity</li>
+                                        <li>Cost effective</li>
+                                        <li>Scalable solution</li>
+                                        <li>Secure and reliable</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="vertical-features" role="tabpanel">
+                            <h4>Detailed Features</h4>
+                            <p>Explore all the features our product has to offer.</p>
+                            <div class="accordion" id="featuresAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#feature1">
+                                            Advanced Analytics
+                                        </button>
+                                    </h2>
+                                    <div id="feature1" class="accordion-collapse collapse show" data-bs-parent="#featuresAccordion">
+                                        <div class="accordion-body">
+                                            Comprehensive analytics dashboard with real-time data visualization.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#feature2">
+                                            API Integration
+                                        </button>
+                                    </h2>
+                                    <div id="feature2" class="accordion-collapse collapse" data-bs-parent="#featuresAccordion">
+                                        <div class="accordion-body">
+                                            RESTful API for seamless integration with your existing systems.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="vertical-pricing" role="tabpanel">
+                            <h4>Pricing Plans</h4>
+                            <p>Choose the plan that best fits your needs.</p>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-header text-center">
+                                            <h5>Basic</h5>
+                                            <h3>$9.99<small>/month</small></h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul class="list-unstyled">
+                                                <li>✓ Up to 5 users</li>
+                                                <li>✓ Basic features</li>
+                                                <li>✓ Email support</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card border-primary">
+                                        <div class="card-header text-center bg-primary text-white">
+                                            <h5>Pro</h5>
+                                            <h3>$19.99<small>/month</small></h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul class="list-unstyled">
+                                                <li>✓ Up to 25 users</li>
+                                                <li>✓ Advanced features</li>
+                                                <li>✓ Priority support</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-header text-center">
+                                            <h5>Enterprise</h5>
+                                            <h3>$49.99<small>/month</small></h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul class="list-unstyled">
+                                                <li>✓ Unlimited users</li>
+                                                <li>✓ All features</li>
+                                                <li>✓ 24/7 support</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="vertical-support" role="tabpanel">
+                            <h4>Support & Help</h4>
+                            <p>Get help when you need it with our comprehensive support options.</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>Contact Support</h5>
+                                    <p>Reach out to our support team for assistance.</p>
+                                    <button class="btn btn-primary">Open Support Ticket</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>Documentation</h5>
+                                    <p>Browse our comprehensive documentation.</p>
+                                    <button class="btn btn-outline-primary">View Docs</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Justified Tabs -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <h2>Justified Tabs</h2>
+            <p>Tabs that are evenly distributed across the full width of the container.</p>
+            
+            <TabsContainer Justified="true">
+                <Tab Target="justified-products" Active="true">Products</Tab>
+                <Tab Target="justified-services">Services</Tab>
+                <Tab Target="justified-about">About</Tab>
+            </TabsContainer>
+            
+            <div class="tab-content p-3 border border-top-0" id="justifiedTabsContent">
+                <div class="tab-pane fade show active" id="justified-products" role="tabpanel">
+                    <h4>Our Products</h4>
+                    <p>Discover our range of innovative products designed to meet your needs.</p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Product A</h5>
+                                    <p class="card-text">Description of Product A and its key features.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Product B</h5>
+                                    <p class="card-text">Description of Product B and its key features.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Product C</h5>
+                                    <p class="card-text">Description of Product C and its key features.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="justified-services" role="tabpanel">
+                    <h4>Our Services</h4>
+                    <p>Professional services to help you succeed with our products.</p>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Service</th>
+                                    <th>Description</th>
+                                    <th>Duration</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Consultation</td>
+                                    <td>Expert advice and guidance</td>
+                                    <td>1-2 hours</td>
+                                </tr>
+                                <tr>
+                                    <td>Implementation</td>
+                                    <td>Full setup and configuration</td>
+                                    <td>1-2 days</td>
+                                </tr>
+                                <tr>
+                                    <td>Training</td>
+                                    <td>User training and support</td>
+                                    <td>Half day</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="justified-about" role="tabpanel">
+                    <h4>About Us</h4>
+                    <p>Learn more about our company, mission, and values.</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>Our Mission</h5>
+                            <p>To provide innovative solutions that help businesses grow and succeed in the digital age.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Our Values</h5>
+                            <ul>
+                                <li>Innovation</li>
+                                <li>Quality</li>
+                                <li>Customer Focus</li>
+                                <li>Integrity</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Disabled Tabs -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <h2>Disabled Tabs</h2>
+            <p>Example showing how to disable specific tabs.</p>
+            
+            <TabsContainer>
+                <Tab Target="disabled-active" Active="true">Active Tab</Tab>
+                <Tab Target="disabled-normal">Normal Tab</Tab>
+                <Tab Target="disabled-disabled" Disabled="true">Disabled Tab</Tab>
+                <Tab Target="disabled-another">Another Tab</Tab>
+            </TabsContainer>
+            
+            <div class="tab-content p-3 border border-top-0" id="disabledTabsContent">
+                <div class="tab-pane fade show active" id="disabled-active" role="tabpanel">
+                    <h4>Active Tab</h4>
+                    <p>This is the currently active tab. Notice how the disabled tab cannot be clicked.</p>
+                </div>
+                <div class="tab-pane fade" id="disabled-normal" role="tabpanel">
+                    <h4>Normal Tab</h4>
+                    <p>This is a normal tab that can be clicked and activated.</p>
+                </div>
+                <div class="tab-pane fade" id="disabled-disabled" role="tabpanel">
+                    <h4>Disabled Tab</h4>
+                    <p>This content is not accessible because the tab is disabled.</p>
+                </div>
+                <div class="tab-pane fade" id="disabled-another" role="tabpanel">
+                    <h4>Another Tab</h4>
+                    <p>This is another normal tab that works as expected.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Color Variations -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <h2>Color Variations</h2>
+            <p>Examples of tabs with different color schemes (Note: Color parameter affects styling).</p>
+            
+            <div class="mb-3">
+                <h5>Primary Color</h5>
+                <TabsContainer Color="Quark.Color.Primary">
+                    <Tab Target="color-primary-1" Active="true">Tab 1</Tab>
+                    <Tab Target="color-primary-2">Tab 2</Tab>
+                    <Tab Target="color-primary-3">Tab 3</Tab>
+                </TabsContainer>
+                <div class="tab-content p-3 border border-top-0" id="colorPrimaryContent">
+                    <div class="tab-pane fade show active" id="color-primary-1" role="tabpanel">
+                        <p>Primary color themed tab content.</p>
+                    </div>
+                    <div class="tab-pane fade" id="color-primary-2" role="tabpanel">
+                        <p>Second primary tab content.</p>
+                    </div>
+                    <div class="tab-pane fade" id="color-primary-3" role="tabpanel">
+                        <p>Third primary tab content.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <h5>Secondary Color</h5>
+                <TabsContainer Color="Quark.Color.Secondary">
+                    <Tab Target="color-secondary-1" Active="true">Tab 1</Tab>
+                    <Tab Target="color-secondary-2">Tab 2</Tab>
+                    <Tab Target="color-secondary-3">Tab 3</Tab>
+                </TabsContainer>
+                <div class="tab-content p-3 border border-top-0" id="colorSecondaryContent">
+                    <div class="tab-pane fade show active" id="color-secondary-1" role="tabpanel">
+                        <p>Secondary color themed tab content.</p>
+                    </div>
+                    <div class="tab-pane fade" id="color-secondary-2" role="tabpanel">
+                        <p>Second secondary tab content.</p>
+                    </div>
+                    <div class="tab-pane fade" id="color-secondary-3" role="tabpanel">
+                        <p>Third secondary tab content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Usage Examples -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <h2>Usage Examples</h2>
+            <p>Code examples showing how to implement the Tabs component.</p>
+            
+            <div class="accordion" id="codeExamples">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#basicCode">
+                            Basic Tabs Code
+                        </button>
+                    </h2>
+                    <div id="basicCode" class="accordion-collapse collapse show" data-bs-parent="#codeExamples">
+                        <div class="accordion-body">
+                            <pre><code>&lt;Tabs&gt;
+    &lt;Tab Target="home" Active="true"&gt;Home&lt;/Tab&gt;
+    &lt;Tab Target="profile"&gt;Profile&lt;/Tab&gt;
+    &lt;Tab Target="contact"&gt;Contact&lt;/Tab&gt;
+&lt;/Tabs&gt;
+
+&lt;div class="tab-content"&gt;
+    &lt;div class="tab-pane fade show active" id="home"&gt;Home content&lt;/div&gt;
+    &lt;div class="tab-pane fade" id="profile"&gt;Profile content&lt;/div&gt;
+    &lt;div class="tab-pane fade" id="contact"&gt;Contact content&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pillsCode">
+                            Pills Tabs Code
+                        </button>
+                    </h2>
+                    <div id="pillsCode" class="accordion-collapse collapse" data-bs-parent="#codeExamples">
+                        <div class="accordion-body">
+                            <pre><code>&lt;Tabs Pills="true"&gt;
+    &lt;Tab Target="dashboard" Active="true"&gt;Dashboard&lt;/Tab&gt;
+    &lt;Tab Target="analytics"&gt;Analytics&lt;/Tab&gt;
+    &lt;Tab Target="settings"&gt;Settings&lt;/Tab&gt;
+&lt;/Tabs&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#verticalCode">
+                            Vertical Tabs Code
+                        </button>
+                    </h2>
+                    <div id="verticalCode" class="accordion-collapse collapse" data-bs-parent="#codeExamples">
+                        <div class="accordion-body">
+                            <pre><code>&lt;Tabs Vertical="true"&gt;
+    &lt;Tab Target="overview" Active="true"&gt;Overview&lt;/Tab&gt;
+    &lt;Tab Target="features"&gt;Features&lt;/Tab&gt;
+    &lt;Tab Target="pricing"&gt;Pricing&lt;/Tab&gt;
+&lt;/Tabs&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#disabledCode">
+                            Disabled Tab Code
+                        </button>
+                    </h2>
+                    <div id="disabledCode" class="accordion-collapse collapse" data-bs-parent="#codeExamples">
+                        <div class="accordion-body">
+                            <pre><code>&lt;Tabs&gt;
+    &lt;Tab Target="active" Active="true"&gt;Active&lt;/Tab&gt;
+    &lt;Tab Target="normal"&gt;Normal&lt;/Tab&gt;
+    &lt;Tab Target="disabled" Disabled="true"&gt;Disabled&lt;/Tab&gt;
+&lt;/Tabs&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Component Properties -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <h2>Component Properties</h2>
+            <p>Available properties for customizing the Tabs component.</p>
+            
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Type</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>Color</code></td>
+                            <td><code>CssValue&lt;ColorBuilder&gt;</code></td>
+                            <td><code>Quark.Color.Primary</code></td>
+                            <td>Sets the color theme for the tabs</td>
+                        </tr>
+                        <tr>
+                            <td><code>Pills</code></td>
+                            <td><code>bool</code></td>
+                            <td><code>false</code></td>
+                            <td>Enables pill-style appearance</td>
+                        </tr>
+                        <tr>
+                            <td><code>Vertical</code></td>
+                            <td><code>bool</code></td>
+                            <td><code>false</code></td>
+                            <td>Arranges tabs vertically</td>
+                        </tr>
+                        <tr>
+                            <td><code>Justified</code></td>
+                            <td><code>bool</code></td>
+                            <td><code>false</code></td>
+                            <td>Distributes tabs evenly across width</td>
+                        </tr>
+                        <tr>
+                            <td><code>ChildContent</code></td>
+                            <td><code>RenderFragment</code></td>
+                            <td><code>null</code></td>
+                            <td>Content to render inside the tabs container</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="mt-4">Tab Component Properties</h4>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Type</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>Target</code></td>
+                            <td><code>string</code></td>
+                            <td><code>null</code></td>
+                            <td>ID of the target tab pane</td>
+                        </tr>
+                        <tr>
+                            <td><code>Active</code></td>
+                            <td><code>bool</code></td>
+                            <td><code>false</code></td>
+                            <td>Sets the tab as active</td>
+                        </tr>
+                        <tr>
+                            <td><code>Disabled</code></td>
+                            <td><code>bool</code></td>
+                            <td><code>false</code></td>
+                            <td>Disables the tab</td>
+                        </tr>
+                        <tr>
+                            <td><code>ChildContent</code></td>
+                            <td><code>RenderFragment</code></td>
+                            <td><code>null</code></td>
+                            <td>Content to render inside the tab button</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
 
 @code{
-
     protected override void OnInitialized()
     {
     }
